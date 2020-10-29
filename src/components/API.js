@@ -49,7 +49,8 @@ function API(props) {
         citySearch(response.data._embedded['city:search-results'][0]._links['city:item'].href);
         })
         .catch(function (error) {
-            console.log(error);
+            setMessage("Could not locate city")
+            setData({})
         });
     }
 
