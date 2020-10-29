@@ -7,6 +7,9 @@ function API(props) {
     const [message, setMessage] = useState('')
     const [city, setCity] = useState('');
     const [data, setData] = useState({});
+    const [searched, setSearched] = useState(false);
+
+
     const instance = axios.create({
       baseURL: 'https://api.teleport.org/api',
       headers: {'Accept': 'application/json'}
@@ -47,10 +50,12 @@ function API(props) {
         {params})
         .then(function (response) {
         citySearch(response.data._embedded['city:search-results'][0]._links['city:item'].href);
+        setSearched(true)
         })
         .catch(function (error) {
             setMessage("Could not locate city")
             setData({})
+            setSearched(false)
         });
     }
 
@@ -77,13 +82,9 @@ function API(props) {
         </button>
         {message}
       </form>
-      <City
-        data={data}/>
+      {searched ?  <City data={data}/> : ''}
       </div>
       );
-      
-
-
 }
 
 export default API;
