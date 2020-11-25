@@ -1,44 +1,27 @@
 {
-  "name": "moz-todo-react",
-  "version": "0.1.0",
+  "name": "express-locallibrary-tutorial",
+  "version": "0.0.0",
   "private": true,
-  "dependencies": {
-    "axios": "^0.21.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
-    "jest-enzyme": "^7.1.2",
-    "nanoid": "^3.1.12",
-    "netlify-cli": "^2.65.7",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-icons": "^3.11.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
-    "react-switch": "^5.0.1",
-    "react-test-renderer": "^16.13.1",
-    "styled-components": "^5.2.0",
-    "yarn": "^1.22.10"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "coverage": "react-scripts test --env=jsdom --coverage",
-    "eject": "react-scripts eject"
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run devstart"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "async": "^3.2.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "~1.4.4",
+    "express": "~4.16.1",
+    "express-validator": "^6.6.1",
+    "helmet": "^4.2.0",
+    "luxon": "^1.25.0",
+    "mongoose": "^5.10.13",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "debug": "^2.6.9",
+    "http-errors": "^1.6.3",
+    "nodemon": "^2.0.6"
   }
 }
