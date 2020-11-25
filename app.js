@@ -41,9 +41,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Assignment 10
-// make sure to put before Routes to compress them all
-app.use(compression());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
